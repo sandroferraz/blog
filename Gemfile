@@ -11,6 +11,7 @@ end
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'foreman', '~> 0.78.0'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

@@ -63,6 +63,8 @@ GEM
     erubis (2.7.0)
     excon (0.45.1)
     execjs (2.4.0)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     heroku (3.30.3)
@@ -187,6 +189,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
+  foreman (~> 0.78.0)
   heroku (~> 3.30.3)
   jbuilder (~> 2.0)
   jquery-rails
