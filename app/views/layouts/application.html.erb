@@ -18,19 +18,24 @@
 			<li><a href="mailto:hey@mackenziechild.me">Email</a></li>
 		</ul>
 
-    <p class="sign_in">Admin Login</p>
+    <% if !user_signed_in? %>
+      <p class="sign_in">Admin Login</p>
+    <% end %>
 	</div>
 
 <div id="main_content">
     <div id="header">
       <p>All Posts</p>
 
-      <div class="buttons">
-        <button class="button"><%= link_to "New Post", new_post_path %></button>
-        <button class="button">Log Out</button>
-      </div>
+      <% if user_signed_in? %>
+        <div class="buttons">
+          <button class="button"><%= link_to "New Post", new_post_path %></button>
+          <button class="button"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
+        </div>
+      <% end %>
     </div>
 
+    <p class="notice"><%= notice %></p>
     <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert") %>
     <% end %>
