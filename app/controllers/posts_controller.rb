@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      ExampleMailer.sample_email(current_user).deliver_now
       redirect_to @post
     else
       render 'new'
