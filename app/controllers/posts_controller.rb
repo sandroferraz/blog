@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      ExampleMailer.sample_email(current_user).deliver_now
+      #ExampleMailer.sample_email(current_user).deliver_now
       redirect_to @post
     else
       render 'new'
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :body))
+    if @post.update(post_params)
       redirect_to @post
     else
       render 'edit'
